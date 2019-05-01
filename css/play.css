@@ -39,7 +39,7 @@ video {
     bottom: 5px;
     /*比全屏的状态下的视频元素高*/
     z-index: 100000000000;
-    opacity: 0.3;
+    opacity: 0;
 
 }
 .player:hover .controls {
