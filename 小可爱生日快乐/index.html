@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link href="image/2.ico.ico" rel="SHORTCUT ICON">
+<!--<link rel="stylesheet" href="css/font-awesome.css"/>-->
+<title>小仙女生日快乐！</title>
+
+<!--默认样式-->
+<link rel="stylesheet" href="css/reset.css">
+<!--播放-->
+<link rel="stylesheet" href="css/play.css">
+<!--响应式框架-->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<!--swiper-->
+<link rel="stylesheet" href="dist/css/swiper.min.css">
+<!--css3动画库-->
+<link rel="stylesheet" href="css/animate.css">
+
+<!--banner大图基础样式-->
+<link rel="stylesheet" href="css/slick.css">
+
+<!--页面滚动基础样式-->
+<link rel="stylesheet" href="css/jquery.fullPage.css" />
+
+<!--&lt;!&ndash;导航样式&ndash;&gt;-->
+<!--<link rel="stylesheet" href="css/head.css" />-->
+
+<!--图片和滚屏样式-->
+<link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+<!-- 导航 -->
+<header class="header">
+</header>
+<div id="index_main" class="index_main">
+	<!--播放器-->
+	<figure>
+		<div class="player">
+			<video src="./video/1.mp3"></video>
+			<div class="controls">
+				<!--播放/暂停-->
+				<a href="javascript:;"  class="switch fa pause fa-play"></a>
+				<!--播放进度-->
+				<div class="progress">
+					<div class="line"></div>
+					<div class="bar"></div>
+				</div>
+				<!--当前播放时间/播放总时长-->
+				<div class="timer">
+					<span class="current">00:00:00</span> / <span class="total">00:00:00</span>
+				</div>
+				<!--全屏/取消全屏-->
+				<a href="javascript:;" class="expand fa fa-arrows-alt"></a>
+			</div>
+		</div>
+	</figure>
+	<!--导航-->
+	<div class="section section1">
+		<div class="index_banner">
+
+			<div class="item">
+				<div class="items scaleBg" style="background-image: url(image/6.jpg)"></div>
+			</div>
+			<div class="item">
+				<div class="items scaleBg" style="background-image: url(image/8.jpg);"></div>
+			</div>
+			<div class="item">
+				<div class="items scaleBg" style="background-image: url(image/9.jpg);"></div>
+			</div>
+			<div class="item">
+				<div class="items scaleBg" style="background-image: url(image/14.jpg);"></div>
+			</div>
+			<div class="item">
+				<div class="items scaleBg" style="background-image: url(image/16.jpg);height: 150%"></div>
+			</div>
+			<div class="item">
+				<div class="items scaleBg" style="background-image: url(image/5.jpg);height: 110%"></div>
+			</div>            
+		</div>
+		<div class="left slick_txt">
+			<div class="prev slick_arrow"></div>
+		</div>
+		<div class="right slick_txt">
+			<div class="next slick_arrow"></div>
+		</div>
+		<div class="number">
+			<div class="inner clearfix">
+				<span class="active">01</span>
+				<span >02</span>
+				<span >03</span>
+				<span >04</span>
+				<span >05</span>
+				<span >06</span>
+			</div>
+		</div>
+	</div>
+	<!--第二页-->
+	<div class="section section3">
+		<div class="swiper-container gallery-top">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" style="background-image:url(image/25.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/32.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/33.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/34.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/23.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/21.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/30.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/22.jpg)"></div>
+			</div>
+			<!-- Add Arrows -->
+			<div class="swiper-button-next swiper-button-white"></div>
+			<div class="swiper-button-prev swiper-button-white"></div>
+		</div>
+		<div class="swiper-container gallery-thumbs">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" style="background-image:url(image/25.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/26.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/21.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/23.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/32.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/33.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/34.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/30.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(image/22.jpg)"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.min1.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/index_slick.js"></script>
+<script src="dist/js/swiper.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+	$(function () {
+		/*获取需要操作的元素*/
+		var $video = $('video');
+		/*因为api是属于原生的dom元素的*/
+		var video = $video.get(0);
+
+		/*播放和暂停*/
+		var $switch = $('.switch');
+		/*总时长*/
+		var $total = $('.total');
+		/*进度条*/
+		var $line = $('.line');
+		/*当前播放时间*/
+		var $current = $('.current');
+		/*全屏按钮*/
+		var $expand = $('.expand');
+		/*灰色进度条*/
+		var $bar = $('.bar');
+
+		var formatTime = function (time) {
+			/*00:00:00*/
+			var h = Math.floor(time/3600);
+			var m = Math.floor(time%3600/60);
+			var s = Math.floor(time%60);
+			return (h<10?'0'+h:h)+':'+(m<10?'0'+m:m)+':'+(s<10?'0'+s:s)
+		}
+		/*1. 需要在加载是时候  显示加载状态*/
+		/*当前视频加载到可以播放了就可以隐藏这个状态*/
+		video.oncanplay = function () {
+			$video.show();
+			/*显示总时间*/
+			var timeStr = formatTime(video.duration);
+			/*6. 总时间显示*/
+			$total.html(timeStr);
+		}
+		/*2. 播放*//*3. 暂停*/
+		$switch.on('click',function () {
+			if($switch.hasClass('pause')){
+				video.play();
+				$switch.removeClass('pause').addClass('playing');
+			}else{
+				video.pause();
+				$switch.removeClass('playing').addClass('pause');
+			}
+		});
+		/*4. 进度条显示*/
+		video.ontimeupdate = function () {
+			//console.log('当前播放时间：'+video.currentTime);
+			/*计算  进度条的宽度根据  当前播放时间/总时间  */
+			var p = video.currentTime/video.duration*100+'%';
+			$line.css('width',p);
+			/*5. 播放时间显示*/
+			$current.html(formatTime(video.currentTime));
+		}
+		/*8. 视频播放完成重置播放*/
+		video.onended = function () {
+			video.currentTime = 0;
+			video.play();
+			$switch.removeClass('pause').addClass('playing');
+		}
+		/*9. 跃进功能*/
+		$bar.on('click',function (e) {
+			/*获取点击的位置距离进度条左侧的距离*/
+			var p = e.offsetX/$bar.width();
+			var goTime = p * video.duration;
+			video.currentTime = goTime;
+		})
+	});
+	window.onload = function(){var galleryThumbs = new Swiper('.gallery-thumbs', {
+		spaceBetween: 10,
+		slidesPerView: 4,
+		freeMode: true,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+	});
+		var galleryTop = new Swiper('.gallery-top', {
+			spaceBetween: 10,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			thumbs: {
+				swiper: galleryThumbs
+			}
+		})}
+</script>
+</body>
+</html>
